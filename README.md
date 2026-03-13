@@ -1,2 +1,43 @@
-# magnetic-cube
-Unity-project01-magnetic cube-2DGame
+磁力立方體 (Magnetic Cube)
+這是一款基於物理特性的 3D/2D 射擊闖關遊戲。核心玩法圍繞著「磁力」的吸引與排斥，玩家需要透過精確的射擊與空間判斷，在複雜的物理環境中解開謎題並抵達終點。
+
+🎮 遊戲核心玩法
+磁力物理系統：核心機制基於 Unity Physics 引擎，實現了立方體與環境間的磁力互動。
+
+完整的關卡流：包含標題畫面、關卡選擇系統及 7 個難度遞增的精心設計關卡。
+
+動態回饋：整合了即時 UI 資訊與粒子特效，增強玩家的操作手感（Game Feel）。
+
+📂 專案架構說明
+本專案遵循清晰的模組化管理，方便進行版本控制與多人協作：
+
+Assets/
+
+Scenes/ ⬅️ 關卡配置：包含 TitleScreen、Choose_LV 以及 LV1~LV7。
+
+Scripts/ ⬅️ 核心程式碼：
+
+MagneticSystem/: 處理磁力場計算與物理碰撞。
+
+Player/: 玩家控制、射擊邏輯與血量管理。
+
+UI/: 處理選單跳轉、關卡解鎖邏輯與畫面顯示。
+
+Prefabs/: 包含所有經過調校的物理物件與環境元件。
+
+Sprites/ & Materials/: 遊戲視覺美術素材。
+
+🛠 技術亮點 (Technical Showcase)
+物理模擬優化：
+
+使用 FixedUpdate 進行物理運算，確保磁力吸引在不同幀率下的表現一致。
+
+透過自定義 Physics Material 調節摩擦力與彈力，優化立方體的移動手感。
+
+場景管理系統：
+
+實作了非同步場景載入與全局數據管理（Singleton），確保玩家的通關進度能在不同場景間正確傳遞。
+
+UI 與互動設計：
+
+使用 TextMesh Pro 建立高清晰度的 UI，並透過 Event System 處理選單互動。
